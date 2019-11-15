@@ -18,25 +18,45 @@ def demo2():
 def demo3():
     return '404 Error'
 
-@app.route('/sales-org')
-def salesOrg():
-    return 'sales-org'
+@app.route('/sales-links')
+def salesLinks():
+    return 'sales-links'
 
-@app.route('/sales-wiki')
-def salesWiki():
-    return 'sales-wiki'
+@app.route('/sales-train')
+def salesTrain():
+    return 'sales-train'
 
-@app.route('/ps-org')
-def psOrg():
-    return 'ps-org'
+@app.route('/sales-explore')
+def salesExplore():
+    return 'sales-explore'
 
-@app.route('/ps-wiki')
-def psWiki():
-    return 'ps-wiki'
+@app.route('/demo-jam')
+def demoJam():
+    return 'demo-jam'
+
+@app.route('/ps-sme')
+def psSme():
+    return 'ps-sme'
+
+@app.route('/ps-train')
+def psTrain():
+    return 'ps-train'
 
 @app.route('/signin')
 def signin():
     return 'signin'
+
+@app.route('/demo-logins')
+def demoLogins():
+    return 'demo-logins'
+
+@app.route('/csm-links')
+def csmLinks():
+    return 'csm-links'
+
+@app.route('/csm-train')
+def csmTrain():
+    return 'csm-train'
 
 @app.route('/feature1')
 def feature1():
