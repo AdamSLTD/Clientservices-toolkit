@@ -8,7 +8,7 @@ def index():
 
 @app.route('/convoy')
 def convoy():
-    return 'convoy'
+    return render_template('convoy.html')
 
 @app.route('/demo2')
 def demo2():
