@@ -20,7 +20,7 @@ def demo3():
 
 @app.route('/sales-links')
 def salesLinks():
-    return 'sales-links'
+    return render_template('salesLinks.html')
 
 @app.route('/sales-train')
 def salesTrain():
@@ -28,19 +28,27 @@ def salesTrain():
 
 @app.route('/sales-explore')
 def salesExplore():
-    return 'sales-explore'
+    return render_template('salesExplore.html')
 
 @app.route('/demo-jam')
 def demoJam():
-    return 'demo-jam'
+    return render_template('demoJam.html')
 
-@app.route('/ps-sme')
-def psSme():
-    return 'ps-sme'
+@app.route('/demoeng-help')
+def demoengHelp():
+    return render_template('demoeng-help.html')
 
-@app.route('/ps-train')
-def psTrain():
-    return 'ps-train'
+@app.route('/demoeng-train')
+def demoengTrain():
+    return render_template('demoeng-train.html')
+
+@app.route('/demoeng-daily')
+def demoengDaily():
+    return render_template('demoeng-daily.html')
+
+@app.route('/demoeng-weekly')
+def demoengWeekly():
+    return render_template('demoeng-weekly.html')
 
 @app.route('/signin')
 def signin():
@@ -48,15 +56,19 @@ def signin():
 
 @app.route('/demo-logins')
 def demoLogins():
-    return 'demo-logins'
+    return render_template('demoLogins.html')
 
-@app.route('/csm-links')
-def csmLinks():
-    return 'csm-links'
+@app.route('/inteng-help')
+def intengHelp():
+    return render_template('intengHelp.html')
 
-@app.route('/csm-train')
-def csmTrain():
-    return 'csm-train'
+@app.route('/inteng-train')
+def intengTrain():
+    return render_template('intengTrain.html')
+
+@app.route('/inteng-tools')
+def intengTools():
+    return render_template('intengTools.html')
 
 @app.route('/feature1')
 def feature1():
