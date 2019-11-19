@@ -1,9 +1,522 @@
 {% extends "layout.html" %}
 
 {% block sections %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+</style>
 <section class="section section-hero bg-grey">
-  <div class="container no-padding">
-<h1>Demo Logins</h1>
+  <div class="container">
+    <div class="header-centered">
+      <h1>Login Credentials and Demo Health/Status</h1>
+      <a href="#appconnect" class="cta-button bg-green">Jump to Appconnect</a>
+      <a href="#omnichannel" class="cta-button bg-green">Jump to Omnichannel Status</a>
+    </div>
   </div>
+
 </section>
+<section class="section bg-grey">
+  <div class="container">
+    <div class="header-centered">
+      <h3>Common Demo Logins</h3>
+    </div>
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Trial/Paid</th>
+          <th>Integration URL</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Talkdesk URL</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+        <tr>
+          <td>"Talkforce" (SEs)</td>
+          <td>Online</td>
+          <td>Perm Trial</td>
+          <td><a href="https://login.salesforce.com">Link</a></td>
+          <td>{your email}+talkforce@talkdesk.com</td>
+          <td>{your SF password}</td>
+          <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+          <td>Use SFDC SSO</td>
+          <td>Use SFDC SSO</td>
+        </tr>
+        <tr>
+          <td>"Caviar" (Sales)</td>
+          <td>Online</td>
+          <td>Perm Trial</td>
+          <td><a href="https://login.salesforce.com">Link</a></td>
+          <td>{your email}+talkforce@talkdesk.com</td>
+          <td>{your SF password}</td>
+          <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+          <td>Use SFDC SSO</td>
+          <td>Use SFDC SSO</td>
+        </tr>
+        <tr>
+          <td>Zendesk</td>
+          <td>Online</td>
+          <td>Perm Trial</td>
+          <td><a href="https://demotalkdesk.zendesk.com/login">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>{your SF password}</td>
+          <td><a href="https://demotalkdeskzd.mytalkdesk.com/">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Dynamics 365</td>
+          <td>Max 3 Users</td>
+          <td>Paid Action Pack $450/yr</td>
+          <td><a href="https://talksoft.crm.dynamics.com">Link</a></td>
+          <td>(3 Shared Users) <br> talksoft1@talkdesk0.onmicrosoft.com <br> talksoft2@talkdesk0.onmicrosoft.com <br> talksoft3@talkdesk0.onmicrosoft.com</td>
+          <td>talkdesk123!</td>
+          <td><a href="https://talksoft.talkdeskid.com">Link</a></td>
+          <td>Use Microsoft SSO</td>
+          <td>Use Microsoft SSO</td>
+        </tr>
+        <tr>
+          <td>ServiceNow (Shared)</td>
+          <td>Online</td>
+          <td>Perm Trial</td>
+          <td><a href="https://ven01964.service-now.com/navpage.do">Link</a></td>
+          <td>tdsales</td>
+          <td>IL0v3ServiceNow!</td>
+          <td><a href="https://servicenowdemo.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>ServiceNow (Dedicated SE's)</td>
+          <td>WIP</td>
+          <td>Perm Trial</td>
+          <td><a href="https://ven01964.service-now.com/navpage.do">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>temp pass: talkdesk123</td>
+          <td><a href="https://servicenowdemo.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Front</td>
+          <td>Online</td>
+          <td></td>
+          <td><a href="https://app.frontapp.com">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td><a href="https://fronttd.mytalkdesk.com/">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Freshdesk</td>
+          <td>Online</td>
+          <td></td>
+          <td><a href="tdsales.freshdesk.com/support/login">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td><a href="https://salesteamtrial.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>HelpScout</td>
+          <td>Online</td>
+          <td></td>
+          <td><a href="https://secure.helpscout.net/members/login/">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td><a href="https://helpscoutdemo.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>HighRise</td>
+          <td>Max 2 Users</td>
+          <td></td>
+          <td><a href="https://talkdesk7.highrisehq.com/">Link</a></td>
+          <td>alex.brijitzki@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td><a href="demotalkdesk.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Infusionsoft</td>
+          <td>Max 2 Users</td>
+          <td></td>
+          <td><a href="https://signin.infusionsoft.com/login">Link</a></td>
+          <td>previn.wong@talkdesk.com <br> We can only have 3 users/licenses</td>
+          <td>Talkdesk123</td>
+          <td><a href="https://infusionsoftdemo.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Intercom</td>
+          <td>Online</td>
+          <td></td>
+          <td><a href="https://app.intercom.io/admins/sign_in">Link</a></td>
+          <td>Use Google Auth</td>
+          <td>Use Google Auth</td>
+          <td><a href="https://salesteamtrial.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Kustomer</td>
+          <td>Online</td>
+          <td></td>
+          <td><a href="https://zzz-talkdesk-test.kustomerapp.com/">Link</a></td>
+          <td>karsten.andersen@talkdesk.com</td>
+          <td>talkdesk123!</td>
+          <td><a href="kustomerdemotest.mytalkdesk.com">Link</a></td>
+          <td>tdsales+kustomer@talkdesk.com</td>
+          <td>talkdesk123</td>
+        </tr>
+        <tr>
+          <td>LiveChat</td>
+          <td>Configuring</td>
+          <td></td>
+          <td><a href="https://my.livechatinc.com/home">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td><a href="https://fronttd.mytalkdesk.com">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+        </tr>
+        <tr>
+          <td>OnePageCrm</td>
+          <td>Degraded</td>
+          <td></td>
+          <td><a href="https://app.onepagecrm.com/actions">Link</a></td>
+          <td>jeremiah.ayres@talkdesk.com</td>
+          <td>iQ429##A8pq#</td>
+          <td>trial account expires 10/16/19</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>PipeDrive</td>
+          <td>Online</td>
+          <td></td>
+          <td><a href="https://app.pipedrive.com/auth/login">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td><a href="https://salesteamtrial.mytalkdesk.com">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>Zoho</td>
+          <td>Max 1 User</td>
+          <td>Paid $65/month</td>
+          <td><a href="https://crm.zoho.com">Link</a></td>
+          <td>tdsales@talkdesk.com</td>
+          <td>talkdesk123</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Slack</td>
+          <td>Online</td>
+          <td>TD Main Acct</td>
+          <td>*Inside Talkforce</td>
+          <td></td>
+          <td></td>
+          <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+        <tr>
+          <td>SnapEngage</td>
+          <td>Online</td>
+          <td></td>
+          <td>*Inside Talkforce</td>
+          <td></td>
+          <td></td>
+          <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+          <td>[your email]@talkdesk.com</td>
+          <td>[your password]</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section class="section bg-grey">
+    <div class="container">
+      <div id="appconnect" class="header-centered">
+        <h3>AppConnect Demo Instances</h3>
+      </div>
+      <table style="width:100%">
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Trial/Paid</th>
+            <th>Integration URL</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Talkdesk URL</th>
+            <th>Username</th>
+            <th>Password</th>
+          </tr>
+          <tr>
+            <td>AutoReach</td>
+            <td>Online</td>
+            <td></td>
+            <td><a href="talkforce.mytalkdesk.com">Link</a></td>
+            <td>Talkforce Creds</td>
+            <td></td>
+            <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+            <td>Talkforce Creds</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>PCI Pal</td>
+            <td>Online</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+            <td>Talkforce Creds</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>LoxySoft</td>
+            <td>Unkown</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Observe.ai</td>
+            <td>Unknown</td>
+            <td></td>
+            <td><a href="https://app-internal.observe.ai/signin">Link</a></td>
+            <td>demo@observe.ai</td>
+            <td>T@lkd3sk$</td>
+            <td><a href="https://talkforce.mytalkdesk.com/">Link</a></td>
+            <td>Talkforce Creds</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CSI</td>
+            <td>Unknown</td>
+            <td></td>
+            <td><a href="https://demo2.csiworld.com/virtualobserver/vo.voml?vwginstance=a66d7b64a3ee4bec97eaad74fe3e5b61">Link</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Envision</td>
+            <td>Unknown</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Acquire.io</td>
+            <td>Unknown</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Campaign Dialer App</td>
+            <td>WIP</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Procedure Flow</td>
+            <td>WIP</td>
+            <td></td>
+            <td><a href="https://app.procedureflow.com">Link</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Teleopti (Agent)</td>
+            <td>Unknown</td>
+            <td></td>
+            <td><a href="https://demousce01.teleopticloud.com">Link</a></td>
+            <td>Agent: aa@tele.opti</td>
+            <td>aaa</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Teleopti (Supervisor)</td>
+            <td>Unknown</td>
+            <td></td>
+            <td><a href="https://demousce01.teleopticloud.com">Link</a></td>
+            <td>Supervisor: sjohn@tele.opti</td>
+            <td>sjohn</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="section bg-grey">
+      <div class="container">
+        <div id="omnichannel" class="header-centered">
+          <h3>Omnichannel 2.0 Channel Statuses</h3>
+        </div>
+        <table style="width:100%">
+            <tr>
+              <th>Channel Type</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>ID</th>
+              <th>Notes</th>
+            </tr>
+            <tr>
+              <td>Demo Site</td>
+              <td>Convoy</td>
+              <td>Online</td>
+              <td><a href="/">Link</a></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>SMS</td>
+              <td>Convoy US SMS</td>
+              <td>Online</td>
+              <td>tel:+1 831-264-0371</td>
+              <td>MMS not possible</td>
+            </tr>
+            <tr>
+              <td>SMS</td>
+              <td>Convoy US SMS</td>
+              <td>Online</td>
+              <td>tel:+1 505-814-5260</td>
+              <td>MMS not possible</td>
+            </tr>
+            <tr>
+              <td>SMS</td>
+              <td>Convoy UK SMS</td>
+              <td>Online</td>
+              <td>tel:+447723457339</td>
+              <td>MMS not possible</td>
+            </tr>
+            <tr>
+              <td>SMS</td>
+              <td>Convoy UK SMS</td>
+              <td>Online</td>
+              <td>tel:+447723439031</td>
+              <td>MMS not possible</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>Convoy Email 1</td>
+              <td>Online</td>
+              <td>talkforce.convoy@gmail.com</td>
+              <td>pass:tddemos1234!</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>Convoy Email 2</td>
+              <td>Online</td>
+              <td>talkforce.convoy2@gmail.com</td>
+              <td>pass:tddemos1234!</td>
+            </tr>
+            <tr>
+              <td>Basic Connect 'chatbot'</td>
+              <td>Automated Responses</td>
+              <td>Online</td>
+              <td>"Input 1: any message that contains the word modify <br> Input 2: any message that contains the word late <br> Input 3: any message that contains the word flight"</td>
+              <td>"Output 1: Our records currently indicate that your trip on December 1st to Salt Lake City, Utah is costing $993.27 in US dollars. If you would like to upgrade to first class, the new total will be $1,706.97 US dollars. An Economy seating will be $620.13 US dollars <br> Output 2: It is possible to cancel your flight. If this is a request being made within 24 hours of purchase, you can return to your ticket and hit cancel. Otherwise you may speak with a live agent at +12025167545 <br> Output 3: Hi, yes you can add late check in to your hotel booking. Please navigate to our website and click on the tab labeled -Late Check-in"""</td>
+            </tr>
+            <tr>
+              <td>Chatbot</td>
+              <td>Advanced bot</td>
+              <td>WIP</td>
+              <td>TBD</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>Facebook</td>
+              <td>Talkforce Facebook</td>
+              <td>Online</td>
+              <td><a href="https://www.facebook.com/Talkforce-102214211195674/">Talkforce FB URL</a></td>
+              <td>Use FB Messenger</td>
+            </tr>
+            <tr>
+              <td>Twitter</td>
+              <td>Talkforce Twitter</td>
+              <td>Online</td>
+              <td><a href="https://twitter.com/talkforceu">@TalkforceU</a></td>
+              <td>*In order to Send/Receive message, you need to mutually follow one another. Use the Admin logins to follow your personal twitter profile and vice versa. Admin Login: talkdesk-demos@talkdesk.com, Tddemos1234!</td>
+            </tr>
+            <tr>
+              <td>Apple Business Chat</td>
+              <td>Talkforce ABC</td>
+              <td>Online</td>
+              <td><a href="https://bcrw.apple.com/sms:open?service=iMessage&recipient=urn:biz:4a4d12af-9cf8-422b-a9fa-56fed147d70a">Click to initiate a MSG</a></td>
+              <td>Send #Demo-Engineering your AppleID (if different than your @talkdesk.com address. Use iMessage on Macbook or iPhone. <a href ="https://drive.google.com/open?id=1EoKSJ9eIkOPMWq9uS_amO_eNCW6hE-Cy">Helper Video</a></td>
+            </tr>
+            <tr>
+              <td>WhatsApp</td>
+              <td>Talkdesk WhatsApp</td>
+              <td>WIP</td>
+              <td>Needs Final Config</td>
+              <td>Use WhatsApp Mobile Application</td>
+            </tr>
+            <tr>
+              <td>Social Listening</td>
+              <td>Convoy Email 2</td>
+              <td>Online</td>
+              <td>talkforce.convoy2@gmail.com</td>
+              <td>pass:tddemos1234!</td>
+            </tr>
+            <tr>
+              <td>Wechat</td>
+              <td>Talkdesk Wechat</td>
+              <td>WIP</td>
+              <td></td>
+              <td>pass:tddemos1234!</td>
+            </tr>
+            <tr>
+              <td>RCS</td>
+              <td>Talkdesk RCS</td>
+              <td>Not Started</td>
+              <td>TBD</td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </section>
 {% endblock %}

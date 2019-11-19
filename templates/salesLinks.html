@@ -1,9 +1,132 @@
 {% extends "layout.html" %}
 
 {% block sections %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+</style>
 <section class="section section-hero bg-grey">
-  <div class="container no-padding">
-<h1>Sales Links</h1>
+  <div class="container">
+    <div class="header-centered">
+      <h1>Project Starters</h1>
+      <a href="#otools" class="cta-button bg-green">Junmp to Other Tools</a>
+    </div>
   </div>
+
 </section>
+<section class="section ">
+  <div class="container">
+    <div id="ulinks" class="header-centered">
+      <h3>Useful Links</h3>
+    </div>
+    <table style="width:100%">
+        <tr>
+          <th>Description</th>
+          <th>Link</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Start a Trial</td>
+          <td><a href ="https://account-provision-ui.talkdeskapp.com/e21ce04c-20ef-4a25-b846-1b105b0c8af5?salesforceId=">Link</a></td>
+          <td>Must be provisioned by user with @talkdesk.com gmail account</td>
+        </tr>
+        <tr>
+          <td>Download Callbar</td>
+          <td><a href ="https://downloadcallbar.talkdesk.com/download.html">Link</a></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Universal Agent</td>
+          <td><a href ="https://support-dashboard.talkdeskapp.com/">Link</a></td>
+          <td>Requires access provided by support@talkdesk.com</td>
+        </tr>
+        <tr>
+          <td>HTTP Notifier Service</td>
+          <td><a href ="https://talkdesk.atlassian.net/wiki/spaces/INT/pages/103284945/HTTP+Notifier+-+How+to+Activate+and+Configure?atlOrigin=eyJpIjoiNGVlYmJjY2U3YzBhNDQ1ZjhjN2Y3NTJlYzYyMmVjOGUiLCJwIjoiYyJ9">Link</a></td>
+          <td>For pushing HTTP requests in Automations</td>
+        </tr>
+        <tr>
+          <td>How to enable Custom Studio Component</td>
+          <td><a href ="https://talkdesk.atlassian.net/wiki/spaces/CXMWE/pages/740655530/Components+Enablement">Link</a></td>
+          <td>For enabling a custom http component or new component thru feature flags</td>
+        </tr>
+        <tr>
+          <td>Talkdesk Academy</td>
+          <td><a href ="https://academy.talkdesk.com/">Link</a></td>
+          <td>Training/Onboarding for End Users, Supervisors, and Trainers</td>
+        </tr>
+        <tr>
+          <td>Talkdesk Support</td>
+          <td><a href ="https://support.talkdesk.com/">Link</a></td>
+          <td>Contains Talkdesk Knowledgebase and support tickets</td>
+        </tr>
+        <tr>
+          <td>Talkdesk APIs & SDKs</td>
+          <td><a href ="https://docs.talkdesk.com/">Link</a></td>
+          <td>includes API documentation for Core, Reporting, Presence APIs as well as others</td>
+        </tr>
+        <tr>
+          <td>Product Wiki</td>
+          <td><a href ="https://talkdesk.atlassian.net/wiki/spaces/PROD/overview">Link</a></td>
+          <td>1st stop to find information regarding Roadmap, stakeholders, and technical details</td>
+        </tr>
+    </table>
+    </div>
+  </section>
+  <section class="section ">
+    <div class="container">
+      <div id="otools" class="header-centered">
+        <h3>Other Tools</h3>
+      </div>
+      <table style="width:100%">
+          <tr>
+            <th>Name</th>
+            <th>URL</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Talkdesk Network Test</td>
+            <td><a href ="https://networktest.talkdesk.com/">Link</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Talkdesk Status Page</td>
+            <td><a href ="https://status.talkdesk.com/">Link</a></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Salesforce Workbench</td>
+            <td><a href ="https://workbench.developerforce.com/login.php?startUrl=%2Fquery.php">Link</a></td>
+            <td>For testing/debugging anything Salesforce</td>
+          </tr>
+          <tr>
+            <td>Gong</td>
+            <td><a href ="https://app.gong.io/welcome/login">Link</a></td>
+            <td>Call recordings</td>
+          </tr>
+          <tr>
+            <td>Heroku</td>
+            <td><a href ="https://id.heroku.com/login">Link</a></td>
+            <td>For creating/hosting independent web applications</td>
+          </tr>
+          <tr>
+            <td>Invision</td>
+            <td><a href ="https://id.heroku.com/login">Link</a></td>
+            <td>Includes mockups of developing products that are not built for production yet</td>
+          </tr>
+          <tr>
+            <td>Talkdesk on Github</td>
+            <td><a href ="https://github.com/Talkdesk">Link</a></td>
+            <td>Code repositories for Talkdesk</td>
+          </tr>
+          </table>
+        </div>
+      </section>
+
 {% endblock %}

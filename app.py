@@ -24,7 +24,7 @@ def salesLinks():
 
 @app.route('/sales-train')
 def salesTrain():
-    return 'sales-train'
+    return render_template('salesTrain.html')
 
 @app.route('/sales-explore')
 def salesExplore():
