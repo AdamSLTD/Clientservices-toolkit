@@ -1,9 +1,59 @@
 {% extends "layout.html" %}
 
 {% block sections %}
+<script type="text/javascript" src="https://talkdesk.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/23cn5b/b/19/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=f3a67633"></script>
+<script type="text/javascript">
+		window.ATL_JQ_PAGE_PROPS =  {
+			"triggerFunction": function(showCollectorDialog) {
+				//Requries that jQuery is available!
+				jQuery("#jira-button").click(function(e) {
+					e.preventDefault();
+					showCollectorDialog();
+				});
+			}
+		};
+</script>
+
 <section class="section section-hero bg-grey">
+    <div class="header-centered">
+      <h1>Integrations Engineer Project Requests</h1>
+  </div>
+  <p style="text-align:center">These issues will be <span class="highlight-green">reviewed</span> by integrations team and are subject to a process of approval</p>
+</section>
+<section class="section">
   <div class="container no-padding">
-    <h1>Inteng Help</h1>
+<h3><span class="highlight-green">Qualifications:</span></h3>
+    <div class="w-layout-grid grid-3col">
+      <div class="vert-center-item">
+        <img src="{{ url_for('static', filename='num1.png') }}" alt="" class="usp-icon"/>
+        <h4>Will this project take longer than an hour?</h4>
+        <div class="caption">
+          <div class="text-caption">If you don't know, ask a Demo Engineer</div>
+        </div>
+      </div>
+      <div class="vert-center-item">
+        <img src="{{ url_for('static', filename='num2.png') }}" alt="" class="usp-icon"/>
+        <h4>Is this a large opportunity?</h4>
+        <div class="caption">
+          <div class="text-caption">Small opportunities may not make sense for using technical resources to build custom solutions</div>
+        </div>
+      </div>
+      <div class="vert-center-item">
+        <img src="{{ url_for('static', filename='num3.png') }}" alt="" class="usp-icon"/>
+        <h4>Will this project be reusable?</h4>
+        <div class="caption">
+          <div class="text-caption">One-off custom solutions may or may not be supported</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="#" id="jira-button" class="cta-button bg-green hide w-inline-block">Submit a Jira Request</a>
+    <p></p>
+    <p style="font-size:75%;">*Stay logged in as Nick Rios so you have the correct permission to create an issue</p>
   </div>
 </section>
+
 {% endblock %}
