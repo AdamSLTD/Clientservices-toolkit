@@ -1,13 +1,15 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 from flask_oauth import OAuth
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-GOOGLE_CLIENT_ID = '756511224150-ul7o3dq6i710g3u5v28aitf8n1g00m2o.apps.googleusercontent.com' # os.environ.get("FN_CLIENT_ID")
-GOOGLE_CLIENT_SECRET = 'DJFNzPULOrYpgxvmLTVdDYxt' #os.environ.get("FN_CLIENT_SECRET")
-REDIRECT_URI = '/signin'
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 app = Flask(__name__)
-app.secret_key = 'clientservicesengineering' #os.environ.get("FN_FLASK_SECRET_KEY")
+app.secret_key = os.getenv("SECRET_KEY") #os.environ.get("FN_FLASK_SECRET_KEY")
 oauth = OAuth()
 
 google = oauth.remote_app('google',
