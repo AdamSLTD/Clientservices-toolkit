@@ -4,8 +4,8 @@ import os
 import requests
 #from requests.exceptions import HTTPError
 import json
-from dotenv import load_dotenv
-load_dotenv()
+import dotenv
+dotenv.load_dotenv()
 
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
@@ -35,31 +35,23 @@ def index():
     if access_token is None:
         return redirect(url_for('login'))
     access_token = access_token[0]
+    from urllib2 import Request, urlopen, URLError
     headers = {'Authorization': 'OAuth '+access_token}
+    req = Request('https://www.googleapis.com/oauth2/v1/userinfo', None, headers)
     try:
-        r = request.get('https://www.googleapis.com/oauth2/v1/userinfo', None, headers)
-        response.raise_for_status()
-    except HTTPError as http_err:
-        print('HTTP error occurred')
-        session.pop('access_token', None)
-        return redirect(url_for('login'))
-    except Exception as err:
-        print('Other error occurred') 
-        session.pop('access_token', None)
-        return redirect(url_for('login'))
-    else:
-        print('Success!')
-        check = r.get_json()
-        email = check['email']
-        if '@talkdesk.com' in email:
-            print('@Talkdesk Email')
-            return render_template('index.html')
-        else:
-            print('Gotta be in Talkdesk Bruh')
+        res = urlopen(req)
+    except URLError as err:
+        if e.code == 401:
+            # Unauthorized - bad token
             session.pop('access_token', None)
             return redirect(url_for('login'))
-
-    return render_template('index.html')
+        return res.read()
+    if '@talkdesk.com' in res.read():
+        print('@Talkdesk Email')
+        return render_template('index.html')
+    print('Gotta be in Talkdesk Bruh')
+    session.pop('access_token', None)
+    return render_template('notLoggedIn.html')
 
 
 @app.route('/login')
