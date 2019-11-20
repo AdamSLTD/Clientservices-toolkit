@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 from flask_oauth import OAuth
 import os
+import requests
+#from requests.exceptions import HTTPError
+import json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -32,20 +35,30 @@ def index():
     if access_token is None:
         return redirect(url_for('login'))
     access_token = access_token[0]
-    from urllib2 import Request, urlopen, URLError
-
     headers = {'Authorization': 'OAuth '+access_token}
-    req = Request('https://www.googleapis.com/oauth2/v1/userinfo', None, headers)
     try:
-        res = (urlopen(req)).read()
-        if '@talkdesk.com' in res:
+        r = request.get('https://www.googleapis.com/oauth2/v1/userinfo', None, headers)
+        response.raise_for_status()
+    except HTTPError as http_err:
+        print('HTTP error occurred')
+        session.pop('access_token', None)
+        return redirect(url_for('login'))
+    except Exception as err:
+        print('Other error occurred') 
+        session.pop('access_token', None)
+        return redirect(url_for('login'))
+    else:
+        print('Success!')
+        check = r.get_json()
+        email = check['email']
+        if '@talkdesk.com' in email:
             print('@Talkdesk Email')
-    except URLError as e:
-        if e.code == 401:
-            # Unauthorized - bad token
+            return render_template('index.html')
+        else:
+            print('Gotta be in Talkdesk Bruh')
             session.pop('access_token', None)
             return redirect(url_for('login'))
-        return 'Gotta be a Talkdesk Employee Bruh'
+
     return render_template('index.html')
 
 
