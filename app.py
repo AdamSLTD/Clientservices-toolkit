@@ -38,7 +38,7 @@ def index():
         res = (urlopen(req)).read()
         if '@talkdesk.com' in res:
             print('@Talkdesk Email')
-    except URLError, e:
+    except URLError as e:
         if e.code == 401:
             # Unauthorized - bad token
             session.pop('access_token', None)
