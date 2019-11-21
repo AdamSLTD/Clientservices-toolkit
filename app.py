@@ -3,6 +3,7 @@ from flask_oauth import OAuth
 import os
 import requests
 from urllib.parse import urlparse
+import urllib2
 import json
 import dotenv
 dotenv.load_dotenv()
