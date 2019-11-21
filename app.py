@@ -1,12 +1,15 @@
 from flask import Flask, render_template, url_for, redirect, request, session
-from flask_oauthlib.client import OAuth
+from flask_oauth import OAuth
 import os
 import requests
-from urllib.parse import urlparse
 import urllib2
 import json
 import dotenv
 dotenv.load_dotenv()
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
 
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
@@ -42,7 +45,7 @@ def index():
     try:
         res = urlopen(req)
     except URLError as err:
-        if e.code == 401:
+        if err.code == 401:
             # Unauthorized - bad token
             session.pop('access_token', None)
             return redirect(url_for('login'))
