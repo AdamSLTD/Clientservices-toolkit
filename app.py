@@ -6,8 +6,10 @@ import urllib2
 import json
 import dotenv
 dotenv.load_dotenv()
+import urllib.request
 try:
     from urllib.parse import urlparse
+    from urllib.request import urlopen
 except ImportError:
      from urlparse import urlparse
 
