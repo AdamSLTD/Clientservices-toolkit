@@ -1,13 +1,13 @@
 from flask import Flask, render_template, url_for, redirect, request, session, jsonify
-from authlib.integrations.flask_client import OAuth
+#from authlib.integrations.flask_client import OAuth
 import os
 import requests
 import json
 import dotenv
 dotenv.load_dotenv()
-import urllib.request
-from urllib.parse import urlparse
-from urllib.request import urlopen
+#import urllib.request
+#from urllib.parse import urlparse
+#from urllib.request import urlopen
 
 
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
