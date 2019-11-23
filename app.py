@@ -1,41 +1,72 @@
-from flask import Flask, render_template, url_for, redirect, request, session
-from flask_oauth import OAuth
+from flask import Flask, render_template, url_for, redirect, request, session, jsonify
+from authlib.integrations.flask_client import OAuth
 import os
 import requests
-import urllib2
 import json
 import dotenv
 dotenv.load_dotenv()
 import urllib.request
-try:
-    from urllib.parse import urlparse
-    from urllib.request import urlopen
-except ImportError:
-     from urlparse import urlparse
+from urllib.parse import urlparse
+from urllib.request import urlopen
+
 
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 app = Flask(__name__)
+app.config['GOOGLE_ID'] = GOOGLE_CLIENT_ID
+app.config['GOOGLE_SECRET'] = GOOGLE_CLIENT_SECRET
 app.secret_key = os.getenv("SECRET_KEY") #os.environ.get("FN_FLASK_SECRET_KEY")
-oauth = OAuth()
+oauth = OAuth(app)
 
-google = oauth.remote_app('google',
-base_url='https://www.google.com/accounts/',
+
+google = oauth.register('google',
+api_base_url='https://www.google.com/accounts/',
+server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
 authorize_url='https://accounts.google.com/o/oauth2/auth',
 request_token_url=None,
-request_token_params={'scope': 'https://www.googleapis.com/auth/userinfo.email',
+client_kwargs={'scope': 'https://www.googleapis.com/auth/userinfo.email',
 'response_type': 'code'},
 access_token_url='https://accounts.google.com/o/oauth2/token',
 access_token_method='POST',
 access_token_params={'grant_type': 'authorization_code'},
-consumer_key=GOOGLE_CLIENT_ID,
-consumer_secret=GOOGLE_CLIENT_SECRET)
+client_id=GOOGLE_CLIENT_ID,
+client_secret=GOOGLE_CLIENT_SECRET)
 
+@app.route('/login')
+def login():
+    redirect_uri = url_for('authorize', _external=True)
+    return google.authorize_redirect(redirect_uri)
 
+@app.route('/signin')
+def authorize():
+    token = google.authorize_access_token()
+    # you can save the token into database
+    access_token = token['access_token']
+    user_info_url = 'https://www.googleapis.com/oauth2/v3/userinfo'
+    final_access_token = 'Bearer ' + access_token
+    headers = {'Authorization': final_access_token}
+    r = requests.get(user_info_url, headers = headers)
+    user_info = r.json()
+    email = user_info['email']
+    print(email)
+    if '@talkdesk.com' in email:
+        print('adding something to session')
+        session['access_token'] = access_token
+        return redirect(url_for('index'))
+    else:
+        return render_template('notLoggedIn.html')
 
-@app.route('/') #done
+@app.route('/')
+def index():
+    if session.get('access_token') is None:
+        return redirect(url_for('login'))
+    else:
+        return render_template('index.html')
+
+'''
+@app.route('/')
 def index():
     access_token = session.get('access_token')
     if access_token is None:
@@ -78,6 +109,7 @@ def is_logged_in():
 @google.tokengetter
 def get_access_token():
     return session.get('access_token')
+'''
 
 @app.route('/convoy') #done
 def convoy():
