@@ -5,9 +5,7 @@ import requests
 import json
 import dotenv
 dotenv.load_dotenv()
-#import urllib.request
-#from urllib.parse import urlparse
-#from urllib.request import urlopen
+
 
 
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
@@ -34,10 +32,12 @@ access_token_params={'grant_type': 'authorization_code'},
 client_id=GOOGLE_CLIENT_ID,
 client_secret=GOOGLE_CLIENT_SECRET)
 
+
 @app.route('/login')
 def login():
     redirect_uri = url_for('authorize', _external=True)
     return google.authorize_redirect(redirect_uri)
+
 
 @app.route('/signin')
 def authorize():
@@ -58,6 +58,11 @@ def authorize():
     else:
         return render_template('notLoggedIn.html')
 
+
+def is_logged_in():
+    return True if session.get('access_token') else False
+
+
 @app.route('/')
 def index():
     if session.get('access_token') is None:
@@ -65,53 +70,6 @@ def index():
     else:
         return render_template('index.html')
 
-'''
-@app.route('/')
-def index():
-    access_token = session.get('access_token')
-    if access_token is None:
-        return redirect(url_for('login'))
-    access_token = access_token[0]
-    from urllib2 import Request, urlopen, URLError
-    headers = {'Authorization': 'OAuth '+access_token}
-    req = Request('https://www.googleapis.com/oauth2/v1/userinfo', None, headers)
-    try:
-        res = urlopen(req)
-    except URLError as err:
-        if err.code == 401:
-            # Unauthorized - bad token
-            session.pop('access_token', None)
-            return redirect(url_for('login'))
-        return res.read()
-    if '@talkdesk.com' in res.read():
-        print('@Talkdesk Email')
-        return render_template('index.html')
-    print('Gotta be in Talkdesk Bruh')
-    session.pop('access_token', None)
-    return render_template('notLoggedIn.html')
-
-
-@app.route('/login')
-def login():
-    callback=url_for('authorized', _external=True)
-    return google.authorize(callback=callback)
-
-@app.route(REDIRECT_URI)
-@google.authorized_handler
-def authorized(resp):
-    access_token = resp['access_token']
-    session['access_token'] = access_token, ''
-    return redirect(url_for('index'))
-
-def is_logged_in():
-    return True if session.get('access_token') else False
-
-@google.tokengetter
-def get_access_token():
-    return session.get('access_token')
-'''
-def is_logged_in():
-    return True if session.get('access_token') else False
 
 @app.route('/convoy') #done
 def convoy():
@@ -120,12 +78,14 @@ def convoy():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/demo2') #not available
 def demo2():
     if is_logged_in():
         return '404 Error'
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/demo3') #not available
 def demo3():
@@ -134,12 +94,14 @@ def demo3():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/sales-links') #done
 def salesLinks():
     if is_logged_in():
         return render_template('salesLinks.html')
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/sales-train') #WIP
 def salesTrain():
@@ -148,12 +110,14 @@ def salesTrain():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/sales-explore') #WIP
 def salesExplore():
     if is_logged_in():
         return render_template('salesExplore.html')
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/demo-jam') #not done
 def demoJam():
@@ -162,12 +126,14 @@ def demoJam():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/demoeng-help') #not done
 def demoengHelp():
     if is_logged_in():
         return render_template('demoengHelp.html')
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/demoeng-train') #not done
 def demoengTrain():
@@ -176,12 +142,14 @@ def demoengTrain():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/demoeng-daily') #not done
 def demoengDaily():
     if is_logged_in():
         return render_template('demoengDaily.html')
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/demoeng-weekly') #not done
 def demoengWeekly():
@@ -198,12 +166,14 @@ def demoLogins():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/inteng-help') #not done
 def intengHelp():
     if is_logged_in():
         return render_template('intengHelp.html')
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/inteng-train') #not done
 def intengTrain():
@@ -212,12 +182,14 @@ def intengTrain():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/inteng-tools') #not done
 def intengTools():
     if is_logged_in():
         return render_template('intengTools.html')
     else:
         return render_template('notLoggedIn.html')
+
 
 @app.route('/feature1') #not done
 def feature1():
@@ -226,12 +198,14 @@ def feature1():
     else:
         return render_template('notLoggedIn.html')
 
+
 @app.route('/feature2') #not done
 def feature2():
     if is_logged_in():
         return 'feature2'
     else:
         return render_template('notLoggedIn.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
