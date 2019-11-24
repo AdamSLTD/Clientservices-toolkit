@@ -111,7 +111,7 @@ def get_access_token():
     return session.get('access_token')
 '''
 def is_logged_in():
-    return False if session.get('access_token') else True
+    return True if session.get('access_token') else False
 
 @app.route('/convoy') #done
 def convoy():
