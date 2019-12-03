@@ -82,7 +82,7 @@ def convoy():
 @app.route('/demo2') #not available
 def demo2():
     if is_logged_in():
-        return '404 Error'
+        return render_template('wip.html')
     else:
         return render_template('notLoggedIn.html')
 
@@ -90,7 +90,7 @@ def demo2():
 @app.route('/demo3') #not available
 def demo3():
     if is_logged_in():
-        return '404 Error'
+        return render_template('wip.html')
     else:
         return render_template('notLoggedIn.html')
 
@@ -194,7 +194,7 @@ def intengTools():
 @app.route('/feature1') #not done
 def feature1():
     if is_logged_in():
-        return 'feature1'
+        return render_template('wip.html')
     else:
         return render_template('notLoggedIn.html')
 
@@ -202,7 +202,7 @@ def feature1():
 @app.route('/feature2') #not done
 def feature2():
     if is_logged_in():
-        return 'feature2'
+        return render_template('wip.html')
     else:
         return render_template('notLoggedIn.html')
 
