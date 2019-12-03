@@ -103,10 +103,10 @@ def salesLinks():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/sales-train') #WIP
+@app.route('/technical-FAQ') #WIP
 def salesTrain():
     if is_logged_in():
-        return render_template('salesTrain.html')
+        return render_template('salesFAQ.html')
     else:
         return render_template('notLoggedIn.html')
 
