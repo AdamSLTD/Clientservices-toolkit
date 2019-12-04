@@ -24,81 +24,286 @@
   <div class="container">
     <div id="studio" class="header-centered">
       <br>
-      <h3>Studio</h3>
+      <div style="text-indent: 10px;">
+        <figure id="convoy" align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Studio</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Is it possible to create a 're-usable flow' and then call this from a main flow?</p>
+            <ul>
+              <li>No, but there are plans to reduce complexity of flows.</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: When I have a callback in studio and the request is successful what is supposed to happen?</p>
+          <ul>
+            <li>It means you booked a callback. So, you will be contacted as soon as an agent is available. The agent will see it as an inbound call.</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: Is there a way to Forward to an External number that has an extension using the FTE component?</p>
+          <ul>
+            <li>Not currently possible</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: Can we route calls based off a contact’s custom field that lives in TD database?</p>
+          <ul>
+            <li>No</li>
+          </ul>
+        </figure>
+      </div>
     </div>
-
   </div>
 </section>
 <section class="section bg-grey">
   <div class="container">
     <div id="explore" class="header-centered">
       <br>
-      <h3>Explore</h3>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Explore</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Can we push external data from other CRMs into Explore</p>
+            <ul>
+              <li>No</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: Since there is already an 'Agent Name" column, what is the 'Handling Agent' column in the Calls Report?</p>
+          <ul>
+            <li>Agent Name is the name of the agent that handled the call, but in case of transfer, “Handling Agent” will have the name of the first agent to receive the call and the “Agent Name” will have the name of the agent to whom the calls was transferred to.</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: There are two areas for choosing timezone - under Filters and under Advanced Options. What is the difference?</p>
+          <ul>
+            <li>Timezone in filters, filters the data timezone and Timezone under Advanced Options on Scheduling modal changes the time the query runs.</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>:  I see choices for 'is not null' and 'is not blank' - what is the difference between the two? </p>
+          <ul>
+            <li>Null is absence of values (as you said) and blank is no value available. The best example with be with dispositions, if it’s not enabled in the account would return null, if enabled but not filled by the agent it would return blank.</li>
+          </ul>
+        </figure>
+      </div>
     </div>
-
   </div>
 </section>
 <section class="section ">
     <div class="container">
-      <div id="omni" class="header-centered">
+      <div id="integrations" class="header-centered">
         <br>
-          <h3>Omnichannel</h3>
+        <div style="text-indent: 10px;">
+          <figure align="left">
+            <br>
+              <figcaption style="font-weight: bold;">
+                <h3>Integrations</h3>
+              </figcaption>
+                <br>
+                <p><span style="font-weight: bold;">Q</span>: What’s the difference between grey and green fields in the automations page?</p>
+              <ul>
+                <li>Green fields are available, grey fields may or may not be available during event time.</li>
+              </ul>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Is Call start time when the agent picks the call? Or when it start ringing? </p>
+            <ul>
+              <li>It's on assignment started / call leg requested, which is even a bit before the actual ringing starts.</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: Which types of custom fields are synced from Salesforce to Talkdesk (in the create/edit automation screen)?</p>
+            <ul>
+              <li>Checkbox</li>
+              <li>Date if required</li>
+              <li>Date/Time if required</li>
+              <li>Number if required</li>
+              <li>Phone if required</li>
+              <li>Pick list (both required and not required)</li>
+              <li>Pick list multi-select if required</li>
+              <li>Text if required</li>
+              <li>Text Area if required</li>
+              <li>URL if required</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: The client wants to stop receiving all talkdesk activities in their Salesforce instance. Can this be done?</p>
+            <ul>
+              <li>Yes. If all talkdesk activities are to be deactivated, the client should go to their Salesforce instance → Taldkesk Admin → Settings → Logging → deselect "Log calls in Salesforce"</li>
+            </ul>
+          </figure>
+        </div>
       </div>
-
     </div>
 </section>
 <section class="section bg-grey">
   <div class="container">
-    <div id="report" class="header-centered">
+    <div id="omni" class="header-centered">
       <br>
-      <h3>Reporting</h3>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Omnichannel</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Is it possible to notify the agent on incoming email right away despite it's in another tab?</p>
+            <ul>
+              <li>Notifications can be sent if a chat is assigned to an agent and a new reply comes in.</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: Is there broadcasting available for email?</p>
+          <ul>
+            <li>No, nothing on the official roadmap</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: Is it possible to disable customers to receive emails transcript of the chat conversation?</p>
+          <ul>
+            <li>No, the only thing possible is to disable email transcript to agents.</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: How secure are my SMTP credentials in the Email Assets configuration?</p>
+          <ul>
+            <li>The SMTP data being captured as part of email channel configuration will be saved in database in plain text. Only DBA / Support team, who has access to database can view the data.</li>
+          </ul>
+        </figure>
+      </div>
     </div>
-
   </div>
 </section>
 <section class="section ">
   <div class="container">
     <div id="callbar" class="header-centered">
       <br>
-      <h3>Callbar</h3>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Callbar</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Can we control the order that Context variables show up on the callbar?</p>
+            <ul>
+              <li>No, they are automatically ordered alphabetically</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: If agent A calls agent B, can agent B transfer that call? Is there any limitation for transfering internal calls?</p>
+          <ul>
+            <li>No transfer possible, agent-to-agent is non acd and non conference</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: Is there any way to remove the 'dismiss' button in Callbar to force agents to select/log a disposition?</p>
+          <ul>
+            <li>Yes, its a feature flag to remove dismiss button</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>:Is there a way to make a "clickable" link in Callbar?</p>
+          <ul>
+            <li>Yes, it can done with a put request to Studio from Postman</li>
+          </ul>
+        </figure>
+      </div>
     </div>
-
   </div>
 </section>
 <section class="section bg-grey">
   <div class="container">
     <div id="autoreach" class="header-centered">
       <br>
-      <h3>AutoReach</h3>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>AutoReach</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Can AutoReach Lists be created on custom objects in Salesforce?</p>
+            <ul>
+              <li>Yes, From the AutoReach application main page select ‘Account Settings’</li>
+              <li>Select the text box next to ‘Salesforce Objects’</li>
+              <li>Start typing the name of the Salesforce Object you wish to perform calls against.</li>
+              <li>Select Enter on the object you wish to add</li>
+              <li>Press ‘Save’</li>
+              <li>Once added, ListViews associated to that object will be available in the ‘Add a new list'</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>: Can AutoReach update Talkdesk Activities records in Salesforce to indicate which calls wereused with AutoReach?</p>
+          <ul>
+            <li>Yes, first ensure that there is a AutoReach Field on the Talkdesk Activities object and that the field is validated in the Account Settings of AutoReach.</li>
+            <li>From the AutoReach main page select ‘Account Setting’</li>
+            <li>Check ‘Daily Automatic Sync to Salesforce’ checkbox</li>
+            <li>Press ‘Save’</li>
+            <li>This will go back through all AutoReach calls and check the Autoreach field on the Talkdesk Activity records that were made through Autoreach when the first Rep logins for the day.</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: Can I view the Do Not Call List in Salesforce?</p>
+          <ul>
+            <li>Yes, If Do Not Call is enabled in AutoReach, you need to create a Report or ListView in Salesforce to view.</li>
+            <li>With permission in Salesforce to create reports, create a new report for Contacts or Leads.</li>
+            <li>Filter by the ‘Do Not Call’ field</li>
+            <li>Note: If wanting to remove a Contact or Lead from the Do Not Call List, select the Contact or Lead and uncheck the ‘Do Not Call’ checkbox.</li>
+          </ul>
+        </figure>
+      </div>
     </div>
-
   </div>
 </section>
 <section class="section ">
-    <div class="container">
-      <div id="sfdc" class="header-centered">
-        <br>
-          <h3>Salesforce</h3>
+  <div class="container">
+    <div id="sfdc" class="header-centered">
+      <br>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Salesforce</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Why is my contact now showing in Callbar?</p>
+            <ul>
+              <li>Check to make sure you don't have duplicate contacts</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>:Can we use the same SMS numbers in Salesforce Smart SMS and Omni?</p>
+          <ul>
+            <li>No</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: Do we have a way of tying ONE contact to MULTIPLE accounts in SFDC in Talkforce?</p>
+          <ul>
+            <li>Yes, it is possible to show related lists in the Contact page</li>
+          </ul>
+          <br>
+          <p><span style="font-weight: bold;">Q</span>: It is possible to run two Telephony systems on the same SFDC instance? </p>
+          <ul>
+            <li>Yes, it is possible. Only note is a user in Salesforce can only have one call center setting applied to their profile.</li>
+          </ul>
+        </figure>
       </div>
-
     </div>
+  </div>
 </section>
 <section class="section bg-grey">
   <div class="container">
     <div id="zendesk" class="header-centered">
       <br>
-      <h3>Zendesk</h3>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Zendesk</h3>
+            </figcaption>
+              <br>
+              <p><span style="font-weight: bold;">Q</span>: Can Zendesk automation be used to set values dynamically to Zendesk drop down fields?</p>
+            <ul>
+              <li>Yes</li>
+            </ul>
+            <br>
+            <p><span style="font-weight: bold;">Q</span>:Why are certain calls automatically assigned to the administrator of the account?</p>
+          <ul>
+            <li>As a rule of thumb, when Talkdesk can't find a corresponding agent, the system will assign the ticket to the administrator of the account.</li>
+          </ul>
+        </figure>
+      </div>
     </div>
-
-  </div>
-</section>
-<section class="section ">
-  <div class="container">
-    <div id="integrations" class="header-centered">
-      <br>
-      <h3>Integrations</h3>
-    </div>
-
   </div>
 </section>
 {% endblock %}

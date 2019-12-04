@@ -70,7 +70,7 @@ def index():
     else:
         return render_template('index.html')
 
-@app.route('/Wow-Demos/Guide') #done
+@app.route('/Wow-Demos') #done
 def wowdemoGuide():
     if is_logged_in():
         return render_template('wowdemoGuide.html')
