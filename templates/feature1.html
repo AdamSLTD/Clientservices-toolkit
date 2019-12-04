@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block sections %}
+<section class="section section-hero bg-grey">
+  <div class="container no-padding">
+    <h1>Omnichannel 2.0</h1>
+    <div style="text-indent: 10px;">
+    <p style="font-weight: bold;">Contents:</p>
+      <ul>
+        <li><a href="#wiki">Product Wiki</a></li>
+        <li><a href="#disqualifiers">Sales Disqualifiers</a></li>
+        <li><a href="#techfaq">Technical FAQ</a></li
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section ">
+  <div class="container">
+    <div id="wiki" class="header-centered">
+      <br>
+      <h3>Product Wiki</h3>
+    </div>
+    <p>Click the links for easy re-routing to:</p>
+      <ul>
+        <li><a href ="https://talkdesk.atlassian.net/wiki/spaces/OM/pages/1138557661/Omnichannel%2B2.0">Introduction</a></li>
+        <li><a href="https://talkdesk.atlassian.net/wiki/spaces/OM/pages/1139017639/Technical+FAQs">FAQ</a></li>
+        <li><a href="https://talkdesk.atlassian.net/wiki/spaces/OM/pages/1155006738/Prerequisites">Training</a></li>
+      </ul>
+  </div>
+</section>
+<section class="section bg-grey">
+  <div class="container">
+    <div id="disqualifiers" class="header-centered">
+      <br>
+      <h3>Sales Disqualifiers</h3>
+    </div>
+    <div style="text-indent: 10px;">
+    <p style="font-weight: bold;">Not Available on Any Channels:</p>
+    <ul>
+      <li>Create/sync customer contacts from another platform</li>
+      <li>PCI/HIPPA compliance (Nothing on public roadmap)</li>
+      <li>Add different time-zones for different teams</li>
+      <li>Sync status between Talkdesk and Omnichannel (Roadmap 2020)</li>
+      <li>Co-browsing (Roadmap 2020)</li>
+      <li>Agent Interface in another language (Only available in English but Agents can respond in any unicode and bidirectional language they like)</li>
+      <li>Open PDF attachments without downloading a Chrome extension (Requires pdf reader extension downloaded to Chrome)</li>
+      <li>Search historical chats by subject name or keywords from the body of the message (This is not possible because IMI encrypts <br>subject line and email content to secure sensitive PII data)</li>
+      <li>Calling, payments, plug-ins/stickers in social apps</li>
+      <li>Transfer chats to an agent who’s offline/unavailable</li>
+      <li>Receive an alert when an agent has escalated an issue</li>
+    </ul>
+    <p style="font-weight: bold;">Not Available on Email:</p>
+    <ul>
+      <li>Include conversation history in the email when an agent responds to a customer’s email</li>
+      <li>Reply All and CC for the email channel</li>
+      <li>Link a shared mailbox (No SMTP details) to Omnichannel</li>
+      <li>Display the full body of an email without having to click ‘Preview’ </li>
+    </ul>
+    <p style="font-weight: bold;">Not Available on Livechat:</p>
+    <ul>
+      <li>Add screenshots to the body of a message</li>
+      <li>Have the title and byline text to be fully displayed when I scroll down to the bottom of the widget</li>
+    </ul>
+    <p style="font-weight: bold;">Not Available on SMS:</p>
+    <ul>
+      <li>Send MMS</li>
+      <li>Use non Twilio Numbers</li>
+      <li>Remote call forward to SMS numbers</li>
+      <li>Use both Salesforce SMS and Omnichannel on the same Twilio number</li>
+    </ul>
+    <p style="font-weight: bold;">Requires Custom Development:</p>
+    <ul>
+      <li>Chatbot</li>
+      <li>Any CRM Interactions/Automations</li>
+      <li>Automatically route interactions based on keywords</li>
+      <li>Filter out interactions and automatically close them </li>
+      <li>Auto-tag chats</li>
+      <li>Auto-flag chats</li>
+      <li>Append a signature to a conversation</li>
+    </ul>
+    </div>
+  </div>
+</section>
+<section class="section ">
+  <div class="container">
+    <div id="techfaq" class="header-centered">
+      <br>
+      <h3>Technical FAQ</h3>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

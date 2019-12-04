@@ -70,8 +70,15 @@ def index():
     else:
         return render_template('index.html')
 
+@app.route('/Wow-Demos/Guide') #done
+def wowdemoGuide():
+    if is_logged_in():
+        return render_template('wowdemoGuide.html')
+    else:
+        return render_template('notLoggedIn.html')
 
-@app.route('/convoy') #done
+
+@app.route('/Wow-Demos/Convoy') #done
 def convoy():
     if is_logged_in():
         return render_template('convoy.html')
@@ -79,7 +86,7 @@ def convoy():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demo2') #not available
+@app.route('/Wow-Demos/Demo2') #not available
 def demo2():
     if is_logged_in():
         return render_template('wip.html')
@@ -87,7 +94,7 @@ def demo2():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demo3') #not available
+@app.route('/Wow-Demos/Demo3') #not available
 def demo3():
     if is_logged_in():
         return render_template('wip.html')
@@ -95,7 +102,15 @@ def demo3():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/sales-links') #done
+@app.route('/Sales-Engineering/Guide') #done
+def salesGuide():
+    if is_logged_in():
+        return render_template('salesGuide.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Sales-Engineering/Links') #done
 def salesLinks():
     if is_logged_in():
         return render_template('salesLinks.html')
@@ -103,7 +118,7 @@ def salesLinks():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/technical-FAQ') #WIP
+@app.route('/Sales-Engineering/Technical-FAQ') #WIP
 def salesTrain():
     if is_logged_in():
         return render_template('salesFAQ.html')
@@ -111,15 +126,7 @@ def salesTrain():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/sales-explore') #WIP
-def salesExplore():
-    if is_logged_in():
-        return render_template('salesExplore.html')
-    else:
-        return render_template('notLoggedIn.html')
-
-
-@app.route('/demo-jam') #not done
+@app.route('/Sales-Engineering/Demo-Jam') #not done
 def demoJam():
     if is_logged_in():
         return render_template('demoJam.html')
@@ -127,7 +134,15 @@ def demoJam():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demoeng-help') #not done
+@app.route('/Demo-Engineering/Guide') #not done
+def demoengGuide():
+    if is_logged_in():
+        return render_template('demoengGuide.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Demo-Engineering/Help') #not done
 def demoengHelp():
     if is_logged_in():
         return render_template('demoengHelp.html')
@@ -135,7 +150,7 @@ def demoengHelp():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demoeng-train') #not done
+@app.route('/Demo-Engineering/Train') #not done
 def demoengTrain():
     if is_logged_in():
         return render_template('demoengTrain.html')
@@ -143,7 +158,7 @@ def demoengTrain():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demoeng-daily') #not done
+@app.route('/Demo-Engineering/Daily') #not done
 def demoengDaily():
     if is_logged_in():
         return render_template('demoengDaily.html')
@@ -151,7 +166,7 @@ def demoengDaily():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demoeng-weekly') #not done
+@app.route('/Demo-Engineering/Weekly') #not done
 def demoengWeekly():
     if is_logged_in():
         return render_template('demoengWeekly.html')
@@ -159,7 +174,7 @@ def demoengWeekly():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/demo-logins') #done
+@app.route('/Sales-Engineering/Demo-Logins') #done
 def demoLogins():
     if is_logged_in():
         return render_template('demoLogins.html')
@@ -167,7 +182,15 @@ def demoLogins():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/inteng-help') #not done
+@app.route('/Integrations-Engineering/Guide') #not done
+def intengGuide():
+    if is_logged_in():
+        return render_template('intengGuide.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Integrations-Engineering/Help') #not done
 def intengHelp():
     if is_logged_in():
         return render_template('intengHelp.html')
@@ -175,7 +198,7 @@ def intengHelp():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/inteng-train') #not done
+@app.route('/Integrations-Engineering/Train') #not done
 def intengTrain():
     if is_logged_in():
         return render_template('intengTrain.html')
@@ -183,7 +206,7 @@ def intengTrain():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/inteng-tools') #not done
+@app.route('/Integrations-Engineering/Tools') #not done
 def intengTools():
     if is_logged_in():
         return render_template('intengTools.html')
@@ -191,18 +214,18 @@ def intengTools():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/feature1') #not done
+@app.route('/Feature1') #not done
 def feature1():
     if is_logged_in():
-        return render_template('wip.html')
+        return render_template('feature1.html')
     else:
         return render_template('notLoggedIn.html')
 
 
-@app.route('/feature2') #not done
+@app.route('/Feature2') #not done
 def feature2():
     if is_logged_in():
-        return render_template('wip.html')
+        return render_template('feature2.html')
     else:
         return render_template('notLoggedIn.html')
 

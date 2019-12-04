@@ -1,0 +1,172 @@
+{% extends "layout.html" %}
+
+{% block sections %}
+<section class="section section-hero bg-grey">
+  <div class="container no-padding">
+    <h1>Integration Engineer Guide</h1>
+    <br>
+      <h4>Overview</h4>
+      <br>
+      <p>In here, you will find an <a href="#onboarding">onboarding plan</a> as well as <a href="#processes">processes</a> that the Integrations Engineering team follow.</p>
+      <br>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div id="onboarding" class="header-centered">
+      <br>
+      <h3>Onboarding</h3>
+      <br>
+      <p>Please get started with the different categories simultaneously--but <br>
+        follow the order of tasks within a given category. Every week will <br>
+        culminate with an End of Week challenge.</p>
+      <div style="text-indent: 10px;">
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Week 1</h3>
+            </figcaption>
+            <ul>
+              <li>
+                <span style="font-weight: bold;"> Company and Industry </span>
+                <ul>
+                  <li>Read: Talkdesk Vision - <a href="https://docs.google.com/presentation/d/1_VU5ehmEL6gBy8fh-gScyZwrwu-hwGMpGVn0uJcWmvc/edit?usp=sharing">Link</a></li>
+                  <li>Read: Competitive Overview - <a href="https://docs.google.com/presentation/d/1lnE6C9Q1O-4BrsrnR9y9jTJIBp1HtTEokAs7VRKZOhU/edit?usp=sharing">Link</a></li>
+                  <li>Watch: Customer Video SICOM - <a href="https://www.talkdesk.com/resources/videos/sicom/">Link</a></li>
+                  <li>Watch: Customer Video Avetta - <a href="https://www.talkdesk.com/resources/videos/avetta/">Link</a></li>
+                </ul>
+              </li>
+              <li>
+                <span style="font-weight: bold;">Systems and Tools</span>
+                <ul>
+                  <li>Task: Confirm access HR applications to Benefits, TripEasy, Expensify <br>
+                    (If Missing from OneLogin, Reach out to HR or Manager)</li>
+                  <li>Task: Ensure access to Google Drive, Zoom, Jira (Reach out to a Team Member)</li>
+                  <li>Task: Join Slack Channels: #presales-engineering, <br>#professional-services, #demo-engineering, #integration-engineering, #techquestions</li>
+                  <li>Task: Confirm access to Talkdesk instance: Talkforce</li>
+                  <li>Task: Confirm access to 2 Salesforce instances: Talkdesk internal and Talkforce</li>
+                  <li>Task: Generate your email signature - <a href ="https://talkdesk.atlassian.net/wiki/spaces/IT/pages/830835155/Signature+Generator">Link</a></li>
+                  <li>Read: Scheduling meetings with Zoom- <a href ="https://talkdesk.atlassian.net/wiki/spaces/IT/pages/490308656/Scheduling+a+Meeting">Link</a></li>
+                </ul>
+              </li>
+              <li>
+                <span style="font-weight: bold;">Product Skills</span>
+                <ul>
+                  <li>Read: System and Network Requirements - <a href="https://support.talkdesk.com/hc/en-us/articles/204370859-Setting-up-System-Requirements-and-Network-Settings">Link</a></li>
+                  <li>Task: Complete all Talkdesk Academy Courses - <a href="https://academy.talkdesk.com/">Link</a></li>
+                  <li>Task: Create Your Demo Account within Talkdesk (yourname.mytalkdesk.com)</li>
+                  <li>Task: Create Your Salesforce Developer Account - <a href ="https://developer.salesforce.com/">Link</a></li>
+                  <li>Task: Connect Salesforce and Talkdesk together - <a href="https://support.talkdesk.com/hc/en-us/articles/214557866-Installing-Talkdesk-for-Salesforce-">Link</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="highlight-green" style="font-weight: bold;">End of Week 1 Challenge</span>
+                <ul>
+                  <li>Complete Professional Services Challenge 1 - <a href="https://talkdesk.atlassian.net/wiki/spaces/SC/pages/394199460/ProServ+Challenge+1">Link</a></li>
+                </ul>
+              </li>
+            </ul>
+        </figure>
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Week 2</h3>
+            </figcaption>
+            <ul>
+              <li>
+                <span style="font-weight: bold;">Systems and Tools</span>
+                <ul>
+                  <li>Task: Gain Access to Support Dashboard and Universal Agent - <a href="https://talkdesk.atlassian.net/wiki/spaces/DOC/pages/4718777/Accessing+Support+Dashboard+Universal+Agent">Link</a></li>
+                  <li>Task: Download and Use Keybase - <a href="https://keybase.io/">Link</a></li>
+                  <li>Task: Download and Use Postman - <a href="https://www.getpostman.com/">Link</a></li>
+                  <li>Task: Create a Github with Talkdesk Email and enable two-factor authentication with Google Authenticator <br> mobile app - <a href="https://github.com/">Link</a></li>
+                  <li>Task: Add your Github and Keybase user to your Slack profile</li>
+                  <li>Task: Create a Heroku account with Talkdesk Email - <a href="https://www.heroku.com/">Link</a></li>
+                </ul>
+              </li>
+              <li>
+                <span style="font-weight: bold;">Product Skills</span>
+                <ul>
+                  <li>Task: Get Studio enabled on your demo instance (ask Studio Team)</li>
+                  <li>Briefly Skim: Talkdesk API's to understand functionalities - <a href="http://td-s-api-docs.herokuapp.com/swagger-ui/?docExpansion=none&url=http://td-s-api-docs.herokuapp.com/api-docs">Link</a></li>
+                  <li>Task: Complete Apex Basics and Database Trail - <a href="https://trailhead.salesforce.com/en/content/learn/modules/apex_database?trail_id=force_com_dev_beginner">Link</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="highlight-green" style="font-weight: bold;">End of Week 2 Challenge</span>
+                <ul>
+                  <li>Write a SOQL Query in Talkforce that returns all User ID's and Phone Numbers. They should be listed in the order of creation.</li>
+                </ul>
+              </li>
+            </ul>
+        </figure>
+        <figure align="left">
+          <br>
+            <figcaption style="font-weight: bold;">
+              <h3>Week 3</h3>
+            </figcaption>
+            <ul>
+              <li>
+                <span style="font-weight: bold;">Systems and Tools</span>
+                <ul>
+                  <li>Task: Download required setup for your Computer (Node, Yarn, Git, Heroku CLI, Homebrew, Your favorite IDE, etc.)</li>
+                  <li>Task: If not already, read up on said applications</li>
+                </ul>
+              </li>
+              <li>
+                <span style="font-weight: bold;">Product Skills</span>
+                <ul>
+                  <li>Task: Build a very basic Web Page/Application with Open API's</li>
+                  <li>Task: Publish Application to Heroku</li>
+                  <li>Task: Integrate the Talkforce instance of Talkdesk and Salesforce with your Heroku Project (be creative)</li>
+                </ul>
+              </li>
+              <li>
+                <span class="highlight-green" style="font-weight: bold;">End of Week 3 Challenge</span>
+                <ul>
+                  <li>Explain and present your project (architecture, reasoning, etc.)</li>
+                </ul>
+              </li>
+            </ul>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section bg-grey">
+    <div class="container">
+      <div id="processes" class="header-centered">
+        <br>
+          <h3>Processes</h3>
+          <br>
+          <figure align="left">
+            <br>
+              <figcaption style="font-weight: bold;">
+                <h4>Jira Board</h4>
+              </figcaption>
+              <ul>
+                <li>
+                  <span style="font-weight: bold;"> a </span>
+                  <ul>
+                    <li>i</li>
+                  </ul>
+                </li>
+                <li>
+                  <span style="font-weight: bold;">b</span>
+                  <ul>
+                    <li>i</li>
+                  </ul>
+                </li>
+                <li>
+                  <span style="font-weight: bold;">c</span>
+                  <ul>
+                    <li>i</li>
+                  </ul>
+                </li>
+              </ul>
+          </figure>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

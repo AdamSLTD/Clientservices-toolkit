@@ -195,7 +195,12 @@
 .cookie-wrapper .cookie-links .cookie-link {
     color: #00c4ac;
 }
-
+li {
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+}
 @media (min-width: 577px) {
     .cookie-wrapper {
         align-items: flex-start;
