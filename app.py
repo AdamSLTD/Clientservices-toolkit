@@ -121,7 +121,7 @@ def salesLinks():
 @app.route('/Sales-Engineering/Technical-FAQ') #WIP
 def salesTrain():
     if is_logged_in():
-        return render_template('salesFAQ.html')
+        return render_template('salesFaq.html')
     else:
         return render_template('notLoggedIn.html')
 
