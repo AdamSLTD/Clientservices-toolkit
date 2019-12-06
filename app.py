@@ -230,5 +230,21 @@ def feature2():
         return render_template('notLoggedIn.html')
 
 
+@app.route('/Custom-Solutions/Appconnect-Dialer') #not done
+def appconnectDialer():
+    if is_logged_in():
+        return render_template('appconnectDialer.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Site-Moderators') #not done
+def siteModerators():
+    if is_logged_in():
+        return render_template('siteModerators.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
