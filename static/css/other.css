@@ -552,7 +552,7 @@ a {
 }
 
 .header-centered {
-  max-width: 580px;
+  max-width: 680px;
   margin-right: auto;
   margin-bottom: 40px;
   margin-left: auto;
@@ -1566,7 +1566,7 @@ a {
   display: flex;
   width: 100%;
   height: 100%;
-  max-width: 1024px;
+  max-width: 1424px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 22px;
@@ -1901,7 +1901,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 1024px;
+  max-width: 1424px;
   padding-right: 22px;
   padding-left: 175px;
   grid-auto-columns: 1fr;
@@ -2099,7 +2099,7 @@ a {
 
 .footer {
   display: block;
-  max-width: 1920px;
+  
   margin-right: auto;
   margin-left: auto;
 }

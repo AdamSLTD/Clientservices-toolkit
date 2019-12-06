@@ -7,7 +7,8 @@
     <br>
       <h4>Overview</h4>
       <br>
-      <p>In here, you will find an <a href="#onboarding">onboarding plan</a> as well as <a href="#processes">processes</a> that the Sales Engineering team follow.</p>
+      <p>In here, you will find an <a href="#onboarding">onboarding plan</a> as well as processes for <a href="#disco">Discovery
+        and Scoping</a>, <a href="#rules">Rules of Engagement</a>, <a href="#trial">Trials and POC's</a>, <a href="#sales">Sales</a>, <a href="#rfp">RFP</a>, and <a href="#infosec">Infosec Response</a> that the Sales Engineering team follow.</p>
       <br>
   </div>
 </section>
@@ -123,170 +124,125 @@
 </section>
 <section class="section bg-grey ">
   <div class="container">
-    <div id="processes" class="header-centered">
-      <br>
-      <h2>Processes</h2>
+    <div id="disco" class="header-centered">
       <br>
       <figure align="left">
         <br>
           <figcaption style="font-weight: bold;">
-            <h4>Discovery</h4>
+            <h3>Discovery and Scoping Template + Questions</h3>
+            <br>
+            <h4 style="font-weight: normal;">Create a Google Doc to record the following from the customer:</h4>
           </figcaption>
           <ul>
             <li>
-              <span style="font-weight: bold;"> a </span>
+              <span style="font-weight: bold;">General</span>
               <ul>
-                <li>i</li>
+                <li>Company Name</li>
+                <li>Salesforce Opportunity Link</li>
+                <li>Company Description</li>
+                <li>Call-Center/Data-Center Site Locations and Sizes</li>
               </ul>
             </li>
             <li>
-              <span style="font-weight: bold;">b</span>
+              <span style="font-weight: bold;">Current System, Sites, Agents and Workflows</span>
               <ul>
-                <li>i</li>
+                <li>Provide detailed use cases for inbound and outbound customer journey</li>
+                <li> Include any required intelligent routing and <br>backend system data dips and timeline</li>
+                <li>When do they need to be Live?</li>
+                <li>List out their current pain points?</li>
+                <li>What doesn't work for them and what can fix it? </li>
               </ul>
             </li>
             <li>
-              <span style="font-weight: bold;">c</span>
+              <span style="font-weight: bold;">Voice</span>
               <ul>
-                <li>i</li>
+                <li>Does customer have a current call flow diagram or document (or other detailed channel flow) they can share?</li>
+                <li>What system are you currently using and explain the full flow of how a caller gets to an agent?</li>
+                <li>What is the monthly inbound call volume?</li>
+                <li>What is the monthly outbound call volume?</li>
+                <li>Do you have seasonality or peak times of the year?</li>
+                <li>What are your buisiness hours for operations?</li>
+                <li>How are outbound calls handled today?</li>
+                <li>Are they using  manual ‘click to call’ out of their CRM?</li>
+                <li>Is Preview or Predictive required?</li>
+                <li>Current list size (number of records) being called?</li>
+                <li>Purpose of call list (Notifications, Confirmations - appts, etc.)</li>
+                <li>Is there a need for automated messages (agentless)  either voice / phone or SMS?</li>
+                <li>Phone number migration/porting?</li>
+                <li>Dedicated Lines or Extensions? SIP Devices?</li>
+                <li>Type of Headesets</li>
+                <li>Do you have routing rules based on values in your integrations? (VIP, Region Specific, Privacy)</li>
+                <li>Do you have international needs? What countries?</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">Compliance</span>
+              <ul>
+                <li>Please describe in detail the privacy needs of the solution. Example - Credit Card payments by phone.</li>
+                <li>GDPR?</li>
+                <li>PCI?</li>
+                <li>HIPAA?</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">Integrations & Features</span>
+              <ul>
+                <li>Please provide details on the CRM system and its integration capabilities (REST APIs, Web (SOAP) services, etc.)	</li>
+                <li><span style="font-weight: bold;">CRM </span>
+                  <ul>
+                    <li>Do you currently have contacts in the standard format with email and phone number?</li>
+                    <li>Values stored in standard fields or custom fields?</li>
+                    <li>Do you often merge/delete contacts in your CRM?</li>
+                    <li>Do you work with leads? If yes, what’s your lead conversion process?</li>
+                    <li>How do you treat new phone numbers?</li>
+                    <li>What Objects are used in the CRM today (leads, contacts, cases, etc)</li>
+                  </ul>
+                </li>
+                <li><span style="font-weight: bold;">QM</span>
+                  <ul>
+                    <li>What is your primary business need for recording calls? For e.g. Quality control, improve customer service levels and agent performance and productivity?</li>
+                    <li>What KPIs are you tracking?</li>
+                    <li>What scoring or key word search are you using today?  Please provide samples.</li>
+                  </ul>
+                </li>
+                <li><span style="font-weight: bold;">WFM</span>
+                  <ul>
+                    <li>Reporting needs: time period, ring groups, incoming calls?How are you scheduling agents today?</li>
+                    <li>Are you supporting other channels like chat and email?</li>
+                    <li>Are agents multi skilled?</li>
+                    <li>Are there any specific features you are looking for?</li>
+                  </ul>
+                </li>
+                <li>Speech Analytics</li>
+                <li>Survey </li>
+                <li>Performance Reporting</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">Reporting</span>
+              <ul>
+                <li>What KPIs / Metrics are being tracked?</li>
+                <li>What reporting metrics are a must-have for your Leads/Supervisors? How are they calculated?</li>
+                <li>Reporting on wait time, disposition sets?</li>
+                <li>What are the dashboard needs?</li>
+                <li>Any custom reporting? If yes, please describe.</li>
+                <li>Do you have any existing SLAs? If so, what are SLA’s based on? (Time spent, response time, etc.)</li>
+                <li>List any GAPs the solution requires to be successful. Determine if they are critical or ‘nice to have’.</li>
               </ul>
             </li>
           </ul>
       </figure>
+    </div>
+  </div>
+</section>
+<section class="section ">
+  <div class="container">
+    <div id="rules" class="header-centered">
+      <br>
       <figure align="left">
         <br>
           <figcaption style="font-weight: bold;">
-            <h4>Rules of Engagement</h4>
-          </figcaption>
-          <ul>
-            <li>
-              <span style="font-weight: bold;"> a </span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">b</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">c</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-          </ul>
-      </figure>
-      <figure align="left">
-        <br>
-          <figcaption style="font-weight: bold;">
-            <h4>Trials and POC's</h4>
-          </figcaption>
-          <ul>
-            <li>
-              <span style="font-weight: bold;"> a </span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">b</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">c</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-          </ul>
-      </figure>
-      <figure align="left">
-        <br>
-          <figcaption style="font-weight: bold;">
-            <h4>Sales Process</h4>
-          </figcaption>
-          <ul>
-            <li>
-              <span style="font-weight: bold;"> a </span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">b</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">c</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-          </ul>
-      </figure>
-      <figure align="left">
-        <br>
-          <figcaption style="font-weight: bold;">
-            <h4>Challenges</h4>
-          </figcaption>
-          <ul>
-            <li>
-              <span style="font-weight: bold;"> a </span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">b</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">c</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-          </ul>
-      </figure>
-      <figure align="left">
-        <br>
-          <figcaption style="font-weight: bold;">
-            <h4>RFP Response</h4>
-          </figcaption>
-          <ul>
-            <li>
-              <span style="font-weight: bold;"> a </span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">b</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-            <li>
-              <span style="font-weight: bold;">c</span>
-              <ul>
-                <li>i</li>
-              </ul>
-            </li>
-          </ul>
-      </figure>
-      <figure align="left">
-        <br>
-          <figcaption style="font-weight: bold;">
-            <h4>Infosec Response Process</h4>
+            <h3>Rules of Engagement</h3>
           </figcaption>
           <ul>
             <li>
@@ -312,5 +268,136 @@
     </div>
   </div>
 </section>
-
+<section class="section bg-grey ">
+  <div class="container">
+    <div id="trial" class="header-centered">
+      <br>
+      <figure align="left">
+        <br>
+          <figcaption style="font-weight: bold;">
+            <h3>Trials and POC's</h3>
+          </figcaption>
+          <ul>
+            <li>
+              <span style="font-weight: bold;"> a </span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">b</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">c</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+          </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="section ">
+  <div class="container">
+    <div id="sales" class="header-centered">
+      <br>
+      <figure align="left">
+        <br>
+          <figcaption style="font-weight: bold;">
+            <h3>Sales Process</h3>
+          </figcaption>
+          <ul>
+            <li>
+              <span style="font-weight: bold;"> a </span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">b</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">c</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+          </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="section bg-grey ">
+  <div class="container">
+    <div id="rfp" class="header-centered">
+      <br>
+      <figure align="left">
+        <br>
+          <figcaption style="font-weight: bold;">
+            <h3>RFP Response</h3>
+          </figcaption>
+          <ul>
+            <li>
+              <span style="font-weight: bold;"> a </span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">b</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">c</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+          </ul>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="section ">
+  <div class="container">
+    <div id="infosec" class="header-centered">
+      <br>
+      <figure align="left">
+        <br>
+          <figcaption style="font-weight: bold;">
+            <h3>Infosec Response Process</h3>
+          </figcaption>
+          <ul>
+            <li>
+              <span style="font-weight: bold;"> a </span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">b</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+            <li>
+              <span style="font-weight: bold;">c</span>
+              <ul>
+                <li>i</li>
+              </ul>
+            </li>
+          </ul>
+      </figure>
+    </div>
+  </div>
+</section>
 {% endblock %}
