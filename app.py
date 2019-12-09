@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, request, session, jsonify
 from authlib.integrations.flask_client import OAuth
+#from flask_pymongo import PyMongo
 import os
 import requests
 import json
@@ -7,16 +8,18 @@ import dotenv
 dotenv.load_dotenv()
 
 
-
+#MONGO_DB =os.getenv("MONGO_DB")
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 app = Flask(__name__)
+#app.config['MONGO_URI']=MONGO_DB
 app.config['GOOGLE_ID'] = GOOGLE_CLIENT_ID
 app.config['GOOGLE_SECRET'] = GOOGLE_CLIENT_SECRET
 app.secret_key = os.getenv("SECRET_KEY") #os.environ.get("FN_FLASK_SECRET_KEY")
 oauth = OAuth(app)
+#mongo = PyMongo(app)
 
 
 google = oauth.register('google',
@@ -37,6 +40,11 @@ client_secret=GOOGLE_CLIENT_SECRET)
 def login():
     redirect_uri = url_for('authorize', _external=True)
     return google.authorize_redirect(redirect_uri)
+
+
+#@app.route('requests', methods=['GET','POST', 'PATCH'])
+#def requests():
+
 
 
 @app.route('/signin')
@@ -70,7 +78,7 @@ def index():
     else:
         return render_template('index.html')
 
-@app.route('/Wow-Demos') #done
+@app.route('/Wow-Demos')
 def wowdemoGuide():
     if is_logged_in():
         return render_template('wowdemoGuide.html')
@@ -78,7 +86,7 @@ def wowdemoGuide():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Wow-Demos/Convoy') #done
+@app.route('/Wow-Demos/Convoy')
 def convoy():
     if is_logged_in():
         return render_template('convoy.html')
@@ -102,7 +110,7 @@ def demo3():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Sales-Engineering/Guide') #done
+@app.route('/Sales-Engineering/Guide')
 def salesGuide():
     if is_logged_in():
         return render_template('salesGuide.html')
@@ -110,7 +118,23 @@ def salesGuide():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Sales-Engineering/Links') #done
+@app.route('/Sales-Engineering/Onboarding')
+def salesOnboarding():
+    if is_logged_in():
+        return render_template('salesOnboarding.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Sales-Engineering/Processes')
+def salesProcess():
+    if is_logged_in():
+        return render_template('salesProcess.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Sales-Engineering/Links')
 def salesLinks():
     if is_logged_in():
         return render_template('salesLinks.html')
@@ -118,7 +142,7 @@ def salesLinks():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Sales-Engineering/Technical-FAQ') #WIP
+@app.route('/Sales-Engineering/Technical-FAQ')
 def salesTrain():
     if is_logged_in():
         return render_template('salesFaq.html')
@@ -126,15 +150,23 @@ def salesTrain():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Sales-Engineering/Demo-Jam') #not done
-def demoJam():
+@app.route('/Demo-Engineering/Onboarding')
+def demoengOnboarding():
     if is_logged_in():
-        return render_template('demoJam.html')
+        return render_template('demoengOnboarding.html')
     else:
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Demo-Engineering/Guide') #not done
+@app.route('/Demo-Engineering/Processes') #not done
+def demoengProcess():
+    if is_logged_in():
+        return render_template('demoengProcess.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Demo-Engineering/Guide')
 def demoengGuide():
     if is_logged_in():
         return render_template('demoengGuide.html')
@@ -158,23 +190,7 @@ def demoengTrain():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Demo-Engineering/Daily') #not done
-def demoengDaily():
-    if is_logged_in():
-        return render_template('demoengDaily.html')
-    else:
-        return render_template('notLoggedIn.html')
-
-
-@app.route('/Demo-Engineering/Weekly') #not done
-def demoengWeekly():
-    if is_logged_in():
-        return render_template('demoengWeekly.html')
-    else:
-        return render_template('notLoggedIn.html')
-
-
-@app.route('/Sales-Engineering/Demo-Logins') #done
+@app.route('/Sales-Engineering/Demo-Logins')
 def demoLogins():
     if is_logged_in():
         return render_template('demoLogins.html')
@@ -182,7 +198,7 @@ def demoLogins():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Integrations-Engineering/Guide') #not done
+@app.route('/Integrations-Engineering/Guide')
 def intengGuide():
     if is_logged_in():
         return render_template('intengGuide.html')
@@ -190,10 +206,26 @@ def intengGuide():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Integrations-Engineering/Help') #not done
+@app.route('/Integrations-Engineering/Processes') #not done
+def intengProcess():
+    if is_logged_in():
+        return render_template('intengProcess.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Integrations-Engineering/Help')
 def intengHelp():
     if is_logged_in():
         return render_template('intengHelp.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Integrations-Engineering/Onboarding')
+def intengOnboarding():
+    if is_logged_in():
+        return render_template('intengOnboarding.html')
     else:
         return render_template('notLoggedIn.html')
 
@@ -230,7 +262,7 @@ def feature2():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Custom-Solutions/Appconnect-Dialer') #not done
+@app.route('/Products/Appconnect-Dialer')
 def appconnectDialer():
     if is_logged_in():
         return render_template('appconnectDialer.html')
@@ -238,7 +270,23 @@ def appconnectDialer():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Site-Moderators') #not done
+@app.route('/Products/Custom-Callback') #not done
+def customCallback():
+    if is_logged_in():
+        return render_template('customCallback.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Products/New-Features')
+def newFeatures():
+    if is_logged_in():
+        return render_template('newFeatures.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Site-Moderators')
 def siteModerators():
     if is_logged_in():
         return render_template('siteModerators.html')

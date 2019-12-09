@@ -24,7 +24,7 @@
     <div id="studio" class="header-centered">
       <br>
       <div style="text-indent: 10px;">
-        <figure id="convoy" align="left">
+        <figure align="left">
           <br>
             <figcaption style="font-weight: bold;">
               <h3>Studio</h3>
@@ -154,15 +154,140 @@
             <li>No, nothing on the official roadmap</li>
           </ul>
           <br>
-          <p><span style="font-weight: bold;">Q</span>: Is it possible to disable customers to receive emails transcript of the chat conversation?</p>
-          <ul>
-            <li>No, the only thing possible is to disable email transcript to agents.</li>
-          </ul>
-          <br>
-          <p><span style="font-weight: bold;">Q</span>: How secure are my SMTP credentials in the Email Assets configuration?</p>
-          <ul>
-            <li>The SMTP data being captured as part of email channel configuration will be saved in database in plain text. Only DBA / Support team, who has access to database can view the data.</li>
-          </ul>
+          <p><span style="font-weight: bold;">Q</span>: Do all agents have to leverage the same channels and channel count?
+            For example, can some agents utilize a 3-channel bundle while other agents utilize an all-channel bundle? </p>
+        <ul>
+          <li>All omnichannel-licensed agents have to utilize the same bundle. However, each omnichannel-licensed agent can
+             have a different combination of the 3 channels in a 3-channel bundle.</li>
+        </ul>
+        <br>
+        <p><span style="font-weight: bold;">Q</span>: Can SMS numbers be ported? </p>
+      <ul>
+        <li>Omnichannel 2.0 utilizes a new SMS API that enables Twilio numbers to be SMS-enabled. Bring Your Own Carrier
+          (BYOC) compatibility is on the roadmap and will be made available later.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: What languages are supported? </p>
+      <ul>
+        <li>The user interface is available in English only. The content of the customer- or agent-entered content
+          in chats / messages can be in any unicode or bidirectional language.  </li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>:  How can we define SLA for each digital channel?</p>
+      <ul>
+        <li>We can't but we plan to have it for H1 2020. Nevertheless, we can manage customer expectations using the
+          Unresponsive Chats – Pending from an Agent feature that allows businesses to send auto-responses to customers
+          after X min/hours/days of inactivity from the agent’s end (e.g. “We’ll be with you shortly. Apologies for the
+          delay as we have a long queue today. Thanks for your patience!” etc.). This can be again configured for each
+          channel asset as each channel have different expectations considering their sync/async nature.</li>
+      </ul>
+      <p><span style="font-weight: bold;">Q</span>: Besides blacklisted words/cursing, is it possible to block social
+        profiles or email spammers?</p>
+      <ul>
+        <li>It is also possible to block certain IP for the live chat. Go to Assets > Edit Livechat asset >
+          Websites tab > Edit website > Widget visibility</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Is agent status common between voice and omnichannel?</p>
+      <ul>
+        <li>No. There are 2 different status. One in callbar or main and the other on the Omnichannel tab.
+          The agent can mix both status (disabled on both, available on both or disabled in one and available
+          in the other) however, the queues are separate. However, with this, if an agent logs out of Talkdesk
+          without changing the omnichannel status to unavailable, the omnichannel session will still be active
+          for 1 day. To avoid this, agents must always change to unavailable before logging out or it is possible
+          to ask the partner ops team to change to a shorter session timeout.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Is it possible to accept or reject chats or other interactions by the agent?</p>
+      <ul>
+        <li>No, to avoid agents to pick only certain chats. The only way is to play with the status to unavailable to stop receiving
+          chats. However, interactions can be transferred to other agent.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: What happens if an agent transfers a chat to other agent that has capacity fully occupied?</p>
+      <ul>
+        <li>The system automatic blocks the busy agent to receive any other chat.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Is it possible to disable customers to see chat history for live chat?</p>
+      <ul>
+        <li>Yes, it is. Go to Assets > Edit live chat > General > Toggle off the option "Customer chat history".</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Is it possible to disable customers to receive emails transcript of the chat conversation?</p>
+      <ul>
+        <li>No, the only thing possible is to disable email transcript to agents.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Is Omnichannel solution PCI or HIPPA compliant?</p>
+      <ul>
+        <li>At the moment, not. We are working on it but these are not easy to get certifications so it will take time and we should not commit with dates.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Does Talkdesk Omnichannel have a ECCN number?</p>
+      <ul>
+        <li>No. There are some components of the solution developed in India and therefore do not have this classification.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Is it possible to set up WhatsApp campaigns?</p>
+      <ul>
+        <li>WhatsApp doesn’t encourage the channel to be used to broadcast messages so we wouldn’t recommend doing that. Also WhatsApp
+          requires you to use HSMs to send messages to first time customers and they are charged. Massive messages are only possible for
+          tier 2 packages, however, for platform mode (tier 1) it is possible to send proactive 1-1 messages through HSMs.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Can we set up different time zones and business hours per team like we do in Talkdesk?</p>
+      <ul>
+        <li>No, timezone is defined per account with no difference between teams. It must be defined by the Admin through Omnichannel tab>Settings.
+          As for Working hours can be settled by the team manager per team.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Can I move my own profile to other team or change my role?</p>
+      <ul>
+        <li>No, even for admins, it is not possible to make this kind of changes to own profile.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: Does Omnichannel support resellers?</p>
+      <ul>
+        <li>Yes, resellers are supported, however, due to technical limitations, resellers' customers can only access
+          to omnichannel properly through the <account_name>.mytalkdesk.com url, not from the reseller's URL.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: How the web chat script will impact customer's website speed?</p>
+      <ul>
+        <li>It takes around ~450KB to get the live chat widget loaded onto the associated web page.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: What is the SMTP policy for email assets information?</p>
+      <ul>
+        <li>The SMTP data being captured as part of email channel configuration will be saved in database in plain text.
+           Only DBA / Support team, who has access to database can view the data.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: How does the Salesforce integration work?</p>
+      <ul>
+        <li>Salesforce integration is available for Talkdesk omnichannel as part of tier 2 capabilities. This a PS enabled feature and
+          belongs in the package 1 with a price of $500 per month per account and a limit of 150 flows per minute. PS custom work
+          will add on this price. <br>Omnichannel with Salesforce integration enables customers to receive events from Salesforce
+          and execute actions such as SMS, Outbound Voice, and Flows or insert objects back into Salesforce. For example, when a
+          customer raise a support ticket via SMS, the inputs are captured within Salesforce as Case.</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: What Salesforce events can trigger Omnichannel?</p>
+      <ul>
+        <li>Account - Created and Updated</li>
+        <li>Case - Created and Updated</li>
+        <li>Lead - Created and Updated</li>
+        <li>Opportunity - Created and Updated</li>
+        <li>Task - Created</li>
+      </ul>
+      <br>
+      <p><span style="font-weight: bold;">Q</span>: What can Omnichannel do in Salesforce? </p>
+      <ul>
+        <li>Insert a case/lead/opportunity/account</li>
+        <li>Update a case/lead/opportunity/accoun</li>
+      </ul>
+      <br>
         </figure>
       </div>
     </div>
