@@ -182,13 +182,6 @@ def demoengHelp():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Demo-Engineering/Train') #not done
-def demoengTrain():
-    if is_logged_in():
-        return render_template('demoengTrain.html')
-    else:
-        return render_template('notLoggedIn.html')
-
 
 @app.route('/Sales-Engineering/Demo-Logins')
 def demoLogins():
@@ -226,14 +219,6 @@ def intengHelp():
 def intengOnboarding():
     if is_logged_in():
         return render_template('intengOnboarding.html')
-    else:
-        return render_template('notLoggedIn.html')
-
-
-@app.route('/Integrations-Engineering/Train') #not done
-def intengTrain():
-    if is_logged_in():
-        return render_template('intengTrain.html')
     else:
         return render_template('notLoggedIn.html')
 

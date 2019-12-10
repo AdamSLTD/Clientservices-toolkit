@@ -2099,7 +2099,7 @@ a {
 
 .footer {
   display: block;
-  
+
   margin-right: auto;
   margin-left: auto;
 }
@@ -3326,7 +3326,7 @@ a {
   background-color: #1c1745;
   background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e647e70b3c2_footer-top-curve-white.svg");
   background-position: 50% -20%;
-  background-size: 102%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
