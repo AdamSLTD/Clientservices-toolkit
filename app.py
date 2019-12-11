@@ -110,7 +110,7 @@ def demo3():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Sales-Engineering/Guide')
+@app.route('/Sales-Engineering/Home')
 def salesGuide():
     if is_logged_in():
         return render_template('salesGuide.html')
@@ -166,7 +166,7 @@ def demoengProcess():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Demo-Engineering/Guide')
+@app.route('/Demo-Engineering/Home')
 def demoengGuide():
     if is_logged_in():
         return render_template('demoengGuide.html')
@@ -191,7 +191,7 @@ def demoLogins():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Integrations-Engineering/Guide')
+@app.route('/Integrations-Engineering/Home')
 def intengGuide():
     if is_logged_in():
         return render_template('intengGuide.html')
@@ -259,14 +259,6 @@ def appconnectDialer():
 def customCallback():
     if is_logged_in():
         return render_template('customCallback.html')
-    else:
-        return render_template('notLoggedIn.html')
-
-
-@app.route('/Products/New-Features')
-def newFeatures():
-    if is_logged_in():
-        return render_template('newFeatures.html')
     else:
         return render_template('notLoggedIn.html')
 
