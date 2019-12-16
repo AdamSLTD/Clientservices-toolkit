@@ -94,10 +94,10 @@ def convoy():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Wow-Demos/Demo2') #not available
+@app.route('/Wow-Demos/One-Fine-Stay') #not available
 def demo2():
     if is_logged_in():
-        return render_template('wip.html')
+        return render_template('onefinestay.html')
     else:
         return render_template('notLoggedIn.html')
 
@@ -132,6 +132,15 @@ def salesProcess():
         return render_template('salesProcess.html')
     else:
         return render_template('notLoggedIn.html')
+
+
+@app.route('/Sales-Engineering/Feature-Library')
+def salesFeatures():
+    if is_logged_in():
+        return render_template('featureLibrary.html')
+    else:
+        return render_template('notLoggedIn.html')
+
 
 
 @app.route('/Sales-Engineering/Links')
