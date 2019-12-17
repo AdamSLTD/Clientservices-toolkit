@@ -186,7 +186,7 @@ a {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e223b70b372_u-shape-light-grey.svg"), url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e224070b37c_05-DT-Bike-low.jpg");
+  background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e223b70b372_u-shape-light-grey.svg"), url("main_image.png");
   background-position: 50% 101%, 50% 50%;
   background-size: 102%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -1084,7 +1084,7 @@ a {
 }
 
 .header-card.private {
-  background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e1de570b390_05-DT-liability-low-small.jpg"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-image: url("main_image.png"), linear-gradient(135deg, #c86dd7, #00e0c5);
   background-position: 0px 0px, 0px 0px;
   background-size: cover, auto;
 }
