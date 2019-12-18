@@ -186,7 +186,7 @@ a {
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e223b70b372_u-shape-light-grey.svg"), url("main_image.png");
+  background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d5e6fd0cfc85e223b70b372_u-shape-light-grey.svg"), url("onefinestay-logo.png");
   background-position: 50% 101%, 50% 50%;
   background-size: 102%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -1084,9 +1084,9 @@ a {
 }
 
 .header-card.private {
-  background-image: url("main_image.png"), linear-gradient(135deg, #c86dd7, #00e0c5);
-  background-position: 0px 0px, 0px 0px;
-  background-size: cover, auto;
+  background-image: url("onefinestay-logo.png"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-position: 0% 50%;
+  background-size: cover;
 }
 
 .header-card.e-bike {
@@ -1119,7 +1119,25 @@ a {
 }
 
 .header-card.dog {
-  background-image: url("https://assets-global.website-files.com/5d5e6fd0cfc85ee7e370b34b/5d78b40b584e1425047c047d_coya-hundehaftpflicht-small.jpg"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-image: url("better-logo.jpg"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-position: 50% 50%, 0px 0px;
+  background-size: cover, auto;
+}
+
+.header-card.employ {
+  background-image: url("employbridge.jpeg"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-position: 50% 50%, 0px 0px;
+  background-size: cover, auto;
+}
+
+.header-card.talkdesk {
+  background-image: url("talkdesk-logo.png"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-position: 50% 50%, 0px 0px;
+  background-size: cover, auto;
+}
+
+.header-card.john {
+  background-image: url("john-paul-logo.png"), linear-gradient(135deg, #c86dd7, #00e0c5);
   background-position: 50% 50%, 0px 0px;
   background-size: cover, auto;
 }
