@@ -1,0 +1,49 @@
+The <span class="highlight-green">Convoy Demo</span> lives in Talkdesk instance <a href="https://talkforce.talkdeskid.com/login">talkforce</a> and showcases the power of Talkdesk Omnichannel.
+Sign into Talkforce and set yourself available as an agent in the Convoy Chat Team
+while also navigating to the convoy web page linked above. Sending messages
+in the chat widget at the bottom right of the page will spawn a message in the Omnichannel
+queue where you can grab the conversation and perform a live interaction.
+</li>
+<br>
+<li>
+For login credentials to the instance or to check the status of channels and config, please see this <a href="/Sales-Engineering/Demo-Logins">page</a>
+
+
+
+
+
+<ul style ="text-align:left;">
+  <li>
+    The <span class="highlight-green">One Fine Stay Demo</span> lives in Talkdesk instance <a href="https://onefinestaytdacct.talkdeskid.com/login">onefinestaytdacct</a> and showcases the power of Talkdesk Omnichannel.
+    Sign into Talkforce and set yourself available as an agent in the convoy chat team
+    while also navigating to the convoy page in the drop-down menu above. Sending messages
+    in the chat widget at the bottom right of the page will spawn a message in the Omnichannel
+    queue where you can grab the conversation and perform a live interaction.
+  </li>
+  <br>
+  <li>
+    For login credentials to the instance or to check the status of channels and config, please see this <a href="/Sales-Engineering/Demo-Logins">page</a>
+  </li>
+</ul>
+<p style="font-weight: bold; text-align: left;">Repeat High Value Customer </p>
+<ul style ="text-align:left;">
+  <li>Eunice dials inbound, she is recognized as a premium repeat customer and assigned agent</li>
+  <li>Eunice uses the voice ivr to look at “new booking” for routing and context </li>
+  <li>Voice transcription for where for context</li>
+  <li>Route to assigned agent (email from sfdc field) w/ high priority and waterfall to ring group</li>
+</ul>
+<p style="font-weight: bold; text-align: left;">Booking Advisor</p>
+<ul style ="text-align:left;">
+  <li>See context prior to call acceptance</li>
+  <li>Hyperlinks to onefinestay’s booking site</li>
+  <li>Customer is looking for property in Cork, Ireland</li>
+  <li>Agent assist (AA) list picker for Cork, Ireland</li>
+  <li>AA pulls up schedule for booking</li>
+  <li>AA for knowledge base on how it works getting access. etc</li>
+  <li>CSAT survey sent when call finishes</li>
+</ul>
+<p style="font-weight: bold; text-align: left;">Booking Advisor</p>
+<ul style ="text-align:left;">
+  <li>Slack/Email Notifications when upsell made/escalation/low CSAT, and Queue Size alerts </li>
+  <li>Explore / Live </li>
+</ul>

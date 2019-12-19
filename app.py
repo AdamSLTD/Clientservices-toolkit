@@ -102,10 +102,18 @@ def demo2():
         return render_template('notLoggedIn.html')
 
 
-@app.route('/Wow-Demos/Demo3') #not available
+@app.route('/Wow-Demos/Better-Mortgage') #not available
 def demo3():
     if is_logged_in():
-        return render_template('wip.html')
+        return render_template('Better_Mortgage.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Wow-Demos/Talkdesk-Credit-Union') #not available
+def demo4():
+    if is_logged_in():
+        return render_template('tdcu.html')
     else:
         return render_template('notLoggedIn.html')
 

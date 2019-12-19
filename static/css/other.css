@@ -1137,7 +1137,7 @@ a {
 }
 
 .header-card.john {
-  background-image: url("john-paul-logo.png"), linear-gradient(135deg, #c86dd7, #00e0c5);
+  background-image: url("MongoDB-logo.jpg"), linear-gradient(135deg, #c86dd7, #00e0c5);
   background-position: 50% 50%, 0px 0px;
   background-size: cover, auto;
 }
