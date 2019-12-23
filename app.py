@@ -118,6 +118,22 @@ def demo4():
         return render_template('notLoggedIn.html')
 
 
+@app.route('/Wow-Demos/mongoDB') #not available
+def demo5():
+    if is_logged_in():
+        return render_template('mongoDB.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
+@app.route('/Wow-Demos/EmployBridge') #not available
+def demo6():
+    if is_logged_in():
+        return render_template('employ_bridge.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+
 @app.route('/Sales-Engineering/Home')
 def salesGuide():
     if is_logged_in():
