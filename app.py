@@ -125,7 +125,6 @@ def demo5():
     else:
         return render_template('notLoggedIn.html')
 
-
 @app.route('/Wow-Demos/EmployBridge') #not available
 def demo6():
     if is_logged_in():
@@ -300,6 +299,15 @@ def customCallback():
 def siteModerators():
     if is_logged_in():
         return render_template('siteModerators.html')
+    else:
+        return render_template('notLoggedIn.html')
+
+@app.route('/https://clientservices-mongodb.herokuapp.com/') #not available
+def mongo():
+    if is_logged_in():
+        print("hik")
+        return render_template('mongoDB.html')
+      
     else:
         return render_template('notLoggedIn.html')
 
