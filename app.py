@@ -302,15 +302,6 @@ def siteModerators():
     else:
         return render_template('notLoggedIn.html')
 
-@app.route('/https://clientservices-mongodb.herokuapp.com/') #not available
-def mongo():
-    if is_logged_in():
-        print("hik")
-        return render_template('mongoDB.html')
-      
-    else:
-        return render_template('notLoggedIn.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
